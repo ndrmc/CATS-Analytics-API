@@ -3,6 +3,7 @@ package com.cats.analytics.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by User on 10/11/2017.
@@ -35,12 +36,12 @@ public class Operation {
     private int modifiedById;
     private String modifiedByName;
     private String deletedAt;
-    private RationItem rationItems;
+    private List<RationItem> rationItems;
 
     public Operation() {
     }
 
-    public Operation(String id, int operationId, String name, String description, int hrdId, String hrdName, int programId, String programName, int fscdAnnualPlanId, String fscdAnnualPlanName, int year, int round, String month, String expectedStart, String expectedEnd, String actualStart, String actualEnd, String status, String createdAt, String updatedAt, int createdById, String createdByName, int modifiedById, String modifiedByName, String deletedAt, RationItem rationItems) {
+    public Operation(String id, int operationId, String name, String description, int hrdId, String hrdName, int programId, String programName, int fscdAnnualPlanId, String fscdAnnualPlanName, int year, int round, String month, String expectedStart, String expectedEnd, String actualStart, String actualEnd, String status, String createdAt, String updatedAt, int createdById, String createdByName, int modifiedById, String modifiedByName, String deletedAt, List<RationItem> rationItems) {
         this.id = id;
         this.operationId = operationId;
         this.name = name;
@@ -269,11 +270,11 @@ public class Operation {
         this.deletedAt = deletedAt;
     }
 
-    public RationItem getRationItems() {
+    public List<RationItem> getRationItems() {
         return rationItems;
     }
 
-    public void setRationItems(RationItem rationItems) {
+    public void setRationItems(List<RationItem> rationItems) {
         this.rationItems = rationItems;
     }
 }
