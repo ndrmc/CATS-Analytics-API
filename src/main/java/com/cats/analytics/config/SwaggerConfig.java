@@ -20,7 +20,7 @@ public class SwaggerConfig {
                 .groupName("usergroup")
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.cats.analytics.controllers"))
-                .paths(regex("/user.*"))
+                .paths(regex("/.*"))
                 .build()
                 .apiInfo(metaData());
     }
